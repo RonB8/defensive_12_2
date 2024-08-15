@@ -40,6 +40,7 @@ class Handler
    virtual void helper(const char *str) //מדפיסה את תו האסקי שהמספר במחרוזת מייצג
    {
       std::string s = "0" + std::string(str);
+	  std::cout <<"I'm here\n";
       unsigned int x = std::stoul(s, nullptr, 16);
       printf("%c", x);
    }
@@ -49,7 +50,6 @@ public:
    void interpret(const char* str)
    {
       helper(str);
-	  std::cout <<"I'm here\n";
    }
 };
 
