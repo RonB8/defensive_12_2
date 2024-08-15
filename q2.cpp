@@ -120,7 +120,7 @@ int main(int argc, char** argv)
 
    char* env = dupenv("pwd"); //שכפול משתנה סביבה
    bool allow_options = env != NULL;
-   std::cout << "Allow options = " << allow_options << std::endl;
+   std::cout << "Allow op tions = " << allow_options << std::endl;
    exit(0);
    free(env);
 
