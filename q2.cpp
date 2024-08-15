@@ -1,6 +1,6 @@
 #include <iostream>
 
 int main(){
-	std::cout << "bb\n";
+	std::cout << "cc\n";
 	return 0;
 }
