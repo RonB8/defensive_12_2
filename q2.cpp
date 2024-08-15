@@ -176,11 +176,14 @@ just_echo:
 
    while (argc > 0)
    {
-	std::cout<< "argv[0] = " << argv[0] << "\n";
       const char* s = argv[0];
 
-      if(do_escape && s[0] == '\\')
-         handle_escape(s);
+      if(do_escape && s[0] == '\\'){
+	std::cout<< "yes\n";
+         
+		 handle_escape(s);
+
+	  }
       else
          fputs(argv[0], stdout);
 
