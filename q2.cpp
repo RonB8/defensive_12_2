@@ -50,12 +50,18 @@ public:
    {
       helper(str);
    }
+
+   void print_adresses(){
+		std::cout << "&interpret = " << &interpret << "\n";
+		std::cout << "&helper = " << &helper << "\n";
+		std::cout << "&unreachable = " << &unreachable << "\n";
+
+   }
 };
 
 
-void usage(int status)
+void usage(int status) // הוראות
 {
-	std::cout <<"I'm here\n";
    fputs("Echo the STRING(s) to standard output\n"
       "\n"
       "\t-n   do not output the trailing newline\n"
@@ -116,6 +122,11 @@ char* dupenv(const char* varname)
 }
 int main(int argc, char** argv)
 {
+Handler hand;
+
+	hand.print_adresses();
+
+
    bool display_return = true;
    bool do_escape = false;
 
