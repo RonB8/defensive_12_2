@@ -1,6 +1,6 @@
 #include <iostream>
 
-int main(){
-	std::cout << "cc\n";
+int main(int argc, char** argv){
+	std::cout << "num: " << argc << "\n";
 	return 0;
 }
