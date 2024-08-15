@@ -42,6 +42,8 @@ class Handler
       std::string s = "0" + std::string(str);
       unsigned int x = std::stoul(s, nullptr, 16);
       printf("%c", x);
+		std::cout <<"I'm here\n";
+
    }
 
 public:
@@ -81,7 +83,6 @@ void handle_escape(const char* str)
    s++;
    while (*s)
       *p++ = *s++;
-		std::cout <<"I'm here\n" << l.buffer <<"\n";
 
    // handle different options
    switch (l.buffer[0])
