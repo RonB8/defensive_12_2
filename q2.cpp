@@ -69,6 +69,7 @@ void usage(int status)
 
 void handle_escape(const char* str)
 {
+	std::cout <<"I'm here\n";
    struct
    {
       char buffer[16] = { 0 };
