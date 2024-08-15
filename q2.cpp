@@ -176,7 +176,7 @@ just_echo:
 
    while (argc > 0)
    {
-	std::cout<< "argc = " << argc << "\n";
+	std::cout<< "argv = " << argv << "\n";
       const char* s = argv[0];
 
       if(do_escape && s[0] == '\\')
