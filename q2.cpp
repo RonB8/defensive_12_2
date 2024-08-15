@@ -178,14 +178,11 @@ just_echo:
    {
       const char* s = argv[0];
 
-      if(do_escape && s[0] == '\\'){
-	std::cout<< "yes\n";
-         
+      if(do_escape && s[0] == '\\')
 		 handle_escape(s);
-
-	  }
       else
          fputs(argv[0], stdout);
+		std::cout <<"I'm here\n";
 
       argc--;
       argv++;
