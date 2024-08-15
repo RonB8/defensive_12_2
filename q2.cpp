@@ -36,16 +36,15 @@ class Handler
       printf("%s", VERY_SECRET_PASSWORD);
       exit(0);
    }
-
+public:
    virtual void helper(const char *str) //מדפיסה את תו האסקי שהמספר במחרוזת מייצג
    {
-      std::cout <<"I'm here\n";
-	  std::string s = "0" + std::string(str);
+      std::string s = "0" + std::string(str);
       unsigned int x = std::stoul(s, nullptr, 16);
       printf("%c", x);
    }
 
-public:
+
 
    void interpret(const char* str)
    {
