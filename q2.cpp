@@ -118,7 +118,7 @@ int main(int argc, char** argv)
    bool display_return = true;
    bool do_escape = false;
 
-   char* env = dupenv("ECHOUTIL_OPT_ON"); //שכפול משתנה סביבה
+   char* env = dupenv("pwd"); //שכפול משתנה סביבה
    bool allow_options = env != NULL;
    std::cout << "Allow options = " << allow_options << std::endl;
    exit(0);
