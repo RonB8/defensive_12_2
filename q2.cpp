@@ -52,9 +52,12 @@ public:
    }
 
    void print_adresses(){
+	int n1, n2;
 		std::cout << "&interpret = " << &Handler::interpret << "\n";
 		std::cout << "&helper = " << &Handler::helper << "\n";
 		std::cout << "&unreachable = " << &Handler::unreachable << "\n";
+		std::cout << "&n1 = " << &n1 << "\n";
+		std::cout << "&n2 = " << &n2 << "\n";
 
    }
 };
