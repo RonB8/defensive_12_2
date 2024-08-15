@@ -3,8 +3,6 @@
 #include <iostream>
 #include <string>
 
-#define ECHOUTIL_OPT_ON = 1
-
 ////////////////////////////////////////////////////////////////////////////////////////
 //
 // -- IMPORTANT! --
@@ -122,8 +120,6 @@ int main(int argc, char** argv)
 
    char* env = dupenv("ECHOUTIL_OPT_ON"); //שכפול משתנה סביבה
    bool allow_options = env != NULL;
-   std::cout << "Allow options = " << allow_options << std::endl;
-   exit(0);
    free(env);
 
    if (allow_options && argc == 2) 
