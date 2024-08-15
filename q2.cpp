@@ -147,7 +147,6 @@ int main(int argc, char** argv)
             switch (temp[i])
             {
             case 'e': case 'n':
-				std::cout <<"i = " << i << std::endl;
                break;
             default:
                goto just_echo;
@@ -177,6 +176,7 @@ just_echo:
 
    while (argc > 0)
    {
+	std::cout<< "argc = " << argc << "\n";
       const char* s = argv[0];
 
       if(do_escape && s[0] == '\\')
