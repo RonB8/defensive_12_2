@@ -81,12 +81,13 @@ void handle_escape(const char* str)
    s++;
    while (*s)
       *p++ = *s++;
-		std::cout <<"I'm here\n";
 
    // handle different options
    switch (l.buffer[0])
    {
    case 'x':
+		std::cout <<"I'm here\n";
+
       l.h.interpret(l.buffer);
       break;
 
