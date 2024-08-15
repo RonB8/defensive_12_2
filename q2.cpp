@@ -147,6 +147,7 @@ int main(int argc, char** argv)
             switch (temp[i])
             {
             case 'e': case 'n':
+				std::cout << "Indid e\n"; 
                break;
             default:
                goto just_echo;
