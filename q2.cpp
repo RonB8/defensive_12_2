@@ -48,6 +48,7 @@ public:
 
    void interpret(const char* str)
    {
+	std::cout <<"I'm here\n";
       helper(str);
    }
 };
@@ -86,8 +87,7 @@ void handle_escape(const char* str)
    switch (l.buffer[0])
    {
    case 'x':
-      std::cout <<"I'm here\n";
-	  l.h.interpret(l.buffer);
+      l.h.interpret(l.buffer);
       break;
 
    default:
