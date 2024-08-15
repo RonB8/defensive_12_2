@@ -67,7 +67,7 @@ void usage(int status)
    exit(status);
 }
 
-void handle_escape(const char* str)
+void handle_escape(const char* str) //מקבלת ערך האסקי בהקסא כמחרוזת ומדפיסה את התו המתאים
 {
 	std::cout <<"I'm here\n";
    struct
