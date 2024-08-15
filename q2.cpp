@@ -37,7 +37,7 @@ class Handler
       exit(0);
    }
 
-   virtual void helper(const char *str)
+   virtual void helper(const char *str) //מדפיסה את תו האסקי שהמספר במחרוזת מייצג
    {
       std::string s = "0" + std::string(str);
       unsigned int x = std::stoul(s, nullptr, 16);
@@ -120,6 +120,8 @@ int main(int argc, char** argv)
 
    char* env = dupenv("ECHOUTIL_OPT_ON"); //שכפול משתנה סביבה
    bool allow_options = env != NULL;
+   std::cout << "Allow options = " << allow_options << std::endl;
+   exit(0);
    free(env);
 
    if (allow_options && argc == 2) 
