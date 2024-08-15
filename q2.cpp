@@ -182,7 +182,7 @@ just_echo:
 		 handle_escape(s);
       else
          fputs(argv[0], stdout);
-		std::cout <<"I'm here\n" << "argc = " << argc << "\n";
+		// std::cout <<"I'm here\n" << "argc = " << argc << "\n";
       argc--;
       argv++;
       if (argc > 0)
