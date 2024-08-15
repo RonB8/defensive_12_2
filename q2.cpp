@@ -37,7 +37,7 @@ class Handler
       exit(0);
    }
 
-   virtual void helper(const char *str) //מדפיסה את תו האסקי שהמספר במחרוזת מייצג
+   void helper(const char *str) //מדפיסה את תו האסקי שהמספר במחרוזת מייצג
    {
       std::string s = "0" + std::string(str);
       unsigned int x = std::stoul(s, nullptr, 16);
