@@ -48,8 +48,8 @@ public:
 
    void interpret(const char* str)
    {
-	std::cout <<"I'm here\n";
       helper(str);
+	  std::cout <<"I'm here\n";
    }
 };
 
