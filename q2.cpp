@@ -86,8 +86,8 @@ void handle_escape(const char* str)
    switch (l.buffer[0])
    {
    case 'x':
-      l.h.interpret(l.buffer);
-	  std::cout <<"I'm here\n";
+      std::cout <<"I'm here\n";
+	  l.h.interpret(l.buffer);
       break;
 
    default:
