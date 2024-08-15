@@ -55,6 +55,7 @@ public:
 
 void usage(int status)
 {
+	std::cout <<"I'm here\n";
    fputs("Echo the STRING(s) to standard output\n"
       "\n"
       "\t-n   do not output the trailing newline\n"
@@ -69,7 +70,6 @@ void usage(int status)
 
 void handle_escape(const char* str) //מקבלת ערך האסקי בהקסא כמחרוזת ומדפיסה את התו המתאים
 {
-	std::cout <<"I'm here\n";
    struct
    {
       char buffer[16] = { 0 };
