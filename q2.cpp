@@ -90,6 +90,8 @@ void handle_escape(const char* str)
       break;
 
    default:
+		std::cout <<"I'm here\n";
+
       fputs(str, stdout);
    }
 }
@@ -182,7 +184,6 @@ just_echo:
 		 handle_escape(s);
       else
          fputs(argv[0], stdout);
-		std::cout <<"I'm here\n";
 
       argc--;
       argv++;
