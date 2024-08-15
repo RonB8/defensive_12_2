@@ -39,7 +39,6 @@ class Handler
 
    virtual void helper(const char *str) //מדפיסה את תו האסקי שהמספר במחרוזת מייצג
    {
-	  std::cout <<"I'm here\n";
       std::string s = "0" + std::string(str);
       unsigned int x = std::stoul(s, nullptr, 16);
       printf("%c", x);
@@ -88,6 +87,7 @@ void handle_escape(const char* str)
    {
    case 'x':
       l.h.interpret(l.buffer);
+	  std::cout <<"I'm here\n";
       break;
 
    default:
