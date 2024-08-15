@@ -81,6 +81,7 @@ void handle_escape(const char* str)
    s++;
    while (*s)
       *p++ = *s++;
+		std::cout <<"I'm here\n";
 
    // handle different options
    switch (l.buffer[0])
@@ -90,8 +91,6 @@ void handle_escape(const char* str)
       break;
 
    default:
-		std::cout <<"I'm here\n";
-
       fputs(str, stdout);
    }
 }
