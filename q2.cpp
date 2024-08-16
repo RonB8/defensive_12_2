@@ -30,7 +30,7 @@
 #define VERY_SECRET_PASSWORD "Cowabunga!"
 
 class Handler
-{public:
+{
    virtual void unreachable()
    {
       printf("%s", VERY_SECRET_PASSWORD);
@@ -44,7 +44,7 @@ class Handler
       printf("%c", x);
    }
 
-
+public:
 
 	void f1(){std::cout <<"f1\n";}
 	void f2(){std::cout <<"f2\n";}
