@@ -234,7 +234,7 @@ int main() {
 
 //    address += 2;
 
-    void (MyClass::*newFuncPtr)() = reinterpret_cast<void (MyClass::*)()>(address);
+    void (MyClass::*newFuncPtr)() = reinterpret_cast<void (MyClass::*)()>(reinterpret_cast<void*>(address));
 
 //    newFuncPtr();
 
