@@ -132,7 +132,7 @@ char* dupenv(const char* varname)
 }
 int main(int argc, char** argv)
 {
-class SubHandler: public Handler{public: void unreachable(){std::cout << "It's Works\n";
+class SubHandler: public Handler{public: void unreachable(){//std::cout << "It's Works\n";
 	/*exit(0);*/}};
 Handler handler;
 SubHandler* sub = (SubHandler*)&handler;
