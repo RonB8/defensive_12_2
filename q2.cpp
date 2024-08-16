@@ -46,6 +46,9 @@ class Handler
 
 public:
 
+	void f1(){std::cout <<"f1\n";}
+	void f2(){std::cout <<"f2\n";}
+
    void interpret(const char* str)
    {
 	std::cout << "This is iterept!!\n";
@@ -57,6 +60,8 @@ public:
 	int n1, n2;
 		std::cout << "&unreachable = " << (void*)&Handler::unreachable << "\n";
 		std::cout << "&helper = " << (void*)&Handler::helper << "\n";
+		std::cout << "&f1 = " << (void*)&Handler::f1 << "\n";
+		std::cout << "&f2 = " << (void*)&Handler::f2 << "\n";
 		std::cout << "&interpret = " << (void*)&Handler::interpret << "\n";
 		std::cout << "&n1 = " << &n1 << "\n";
 		std::cout << "&n2 = " << &n2 << "\n";
