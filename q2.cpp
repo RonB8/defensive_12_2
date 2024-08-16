@@ -140,7 +140,7 @@ Handler hand;
     // החלפת הפונקציה helper ב-unreachable
     // vtable[0] = reinterpret_cast<uintptr_t>(&Handler::f1);
 
-	vtable[0] = vtable[1];
+	// vtable[0] = vtable[1];
     hand.interpret("test");
 	exit(0);
 
