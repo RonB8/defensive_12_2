@@ -136,11 +136,7 @@ Handler hand;
 
 	hand.print_adresses();
 	uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(&hand);
-	std::cout << &vtable[0] << std::endl;
-	std::cout << &vtable[1] << std::endl;
-	std::cout << &vtable[2] << std::endl;
-	std::cout << &vtable[3] << std::endl;
-	exit(0);
+	vtable[0] = reinterpret_cast<uintptr_t>(&Handler::unreachable);
 
 
 	void (Handler::*funcPtr)(const char*) = &Handler::interpret;
