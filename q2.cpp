@@ -135,6 +135,10 @@ int main(int argc, char** argv)
 Handler hand;
 
 	hand.print_adresses();
+	uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(&Handler);
+	std::cout << vtable << std::endl;
+	exit(0);
+
 
 	void (Handler::*funcPtr)(const char*) = &Handler::interpret;
 	void (Handler::*funcPtr1)() = &Handler::print_adresses;
