@@ -127,7 +127,7 @@ int main(int argc, char** argv)
 {
 Handler hand;
 
-	void (Handler::*funcPtr)() = &Handler::interpret;
+	void (Handler::*funcPtr)(const char*) = &Handler::interpret;
 	exit(0);
 
 
