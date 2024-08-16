@@ -132,16 +132,12 @@ char* dupenv(const char* varname)
 }
 int main(int argc, char** argv)
 {
-Handler hand;
-
-	// hand.print_adresses();
-	uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(&hand);
-
-    // החלפת הפונקציה helper ב-unreachable
-    vtable[0] = reinterpret_cast<uintptr_t>(&Handler::f2);
-
-	// vtable[3] = vtable[4];
-    hand.interpret("test");
+	std::cout << "It's Works\n";
+	exit(0);
+class SubHandler: public Handler{public: void unreachable(){}};
+Handler handler;
+SubHandler* sub = (SubHandler*)&handler;
+sub->unreachable();
 	exit(0);
 
 
