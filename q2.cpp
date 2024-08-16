@@ -48,6 +48,8 @@ public:
 
    void interpret(const char* str)
    {
+	std::cout << "This is iterept!!\n";
+	return;
       helper(str);
    }
 
@@ -135,6 +137,7 @@ Handler hand;
 	std::cout << (void*)funcPtr << std::endl;
 	std::cout << (void*)funcPtr11 << std::endl;
 	std::cout << (void*)funcPtr1 << std::endl;
+	hand.funcPtr1();
 	exit(0);
 
 
