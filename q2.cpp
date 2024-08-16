@@ -135,20 +135,13 @@ int main(int argc, char** argv)
 Handler hand;
 
 	hand.print_adresses();
-	uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(&hand);
-	vtable[0] = reinterpret_cast<uintptr_t>(&Handler::unreachable);
+	 using FuncPtr = void (Handler::*)();
 
+    FuncPtr ptr = static_cast<FuncPtr>(&Handler::unreachable);
 
-	void (Handler::*funcPtr)(const char*) = &Handler::interpret;
-	void (Handler::*funcPtr1)() = &Handler::print_adresses;
-	uintptr_t a1 = reinterpret_cast<uintptr_t&>(funcPtr);
-	a1 -= 316;
-	void (*funcPtr11)() =  reinterpret_cast<void (*)()>(a1);
-	std::cout << (void*)funcPtr << std::endl;
-	std::cout << (void*)funcPtr11 << std::endl;
-	std::cout << (void*)funcPtr1 << std::endl;
-	(hand.*(funcPtr))("ss");
-	(*(funcPtr11))();
+    void (*unreachableFunc)() = reinterpret_cast<void (*)()>(ptr);
+
+    unreachableFunc();
 	exit(0);
 
 
