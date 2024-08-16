@@ -31,7 +31,7 @@
 
 class Handler
 {
-   virtual void unreachable()
+   void unreachable()
    {
       printf("%s", VERY_SECRET_PASSWORD);
       exit(0);
