@@ -138,9 +138,9 @@ Handler hand;
 	uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(&hand);
 
     // החלפת הפונקציה helper ב-unreachable
-    // vtable[0] = reinterpret_cast<uintptr_t>(&Handler::f1);
+    vtable[0] = reinterpret_cast<uintptr_t>(&Handler::f2);
 
-	vtable[3] = vtable[4];
+	// vtable[3] = vtable[4];
     hand.interpret("test");
 	exit(0);
 
