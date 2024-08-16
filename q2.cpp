@@ -128,7 +128,9 @@ int main(int argc, char** argv)
 Handler hand;
 
 	void (Handler::*funcPtr)(const char*) = &Handler::interpret;
-	std::cout << (void*)funcPtr;
+	void (Handler::*funcPtr1)() = &Handler::print_adresses;
+	std::cout << (void*)funcPtr << std::endl;
+	std::cout << (void*)funcPtr1 << std::endl;
 	exit(0);
 
 
