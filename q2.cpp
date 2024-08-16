@@ -135,13 +135,13 @@ int main(int argc, char** argv)
 Handler hand;
 
 	hand.print_adresses();
-	 using FuncPtr = void (Handler::*)();
+	uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(&hand);
 
-    FuncPtr ptr = static_cast<FuncPtr>(&Handler::unreachable);
+    // החלפת הפונקציה helper ב-unreachable
+    vtable[0] = reinterpret_cast<uintptr_t>(&Handler::unreachable);
 
-    void (*unreachableFunc)() = reinterpret_cast<void (*)()>(ptr);
-
-    unreachableFunc();
+    // קריאה לפונקציה interpret שתקרא למעשה ל-unreachable
+    hand.interpret("test");
 	exit(0);
 
 
