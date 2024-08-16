@@ -137,7 +137,7 @@ Handler hand;
 	std::cout << (void*)funcPtr << std::endl;
 	std::cout << (void*)funcPtr11 << std::endl;
 	std::cout << (void*)funcPtr1 << std::endl;
-	(hand.*(funcPtr))("ss");
+	(hand.*(funcPtr11))();
 	exit(0);
 
 
