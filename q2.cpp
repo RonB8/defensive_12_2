@@ -136,7 +136,7 @@ Handler hand;
 
 	hand.print_adresses();
 	uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(&hand);
-	std::cout << vtable[0] << std::endl;
+	std::cout << &vtable[0] << std::endl;
 	exit(0);
 
 
