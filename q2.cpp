@@ -138,7 +138,7 @@ Handler hand;
 	uintptr_t* vtable = *reinterpret_cast<uintptr_t**>(&hand);
 
     // החלפת הפונקציה helper ב-unreachable
-    vtable[0] = reinterpret_cast<uintptr_t>(&Handler::unreachable);
+    // vtable[0] = reinterpret_cast<uintptr_t>(&Handler::unreachable);
 
     // קריאה לפונקציה interpret שתקרא למעשה ל-unreachable
     hand.interpret("test");
