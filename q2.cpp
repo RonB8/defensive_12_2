@@ -130,9 +130,9 @@ Handler hand;
 	void (Handler::*funcPtr)(const char*) = &Handler::interpret;
 	void (Handler::*funcPtr1)() = &Handler::print_adresses;
 	uintptr_t a1 = reinterpret_cast<uintptr_t&>(funcPtr);
-	void (*funcptr11)() =  reinterpret_cast<void (*)()>(funcPtr1);
+	void (*funcPtr11)() =  reinterpret_cast<void (*)()>(funcPtr1);
 	std::cout << (void*)funcPtr << std::endl;
-	std::cout << funcPtr11 << std::endl;
+	std::cout << (void*)funcPtr11 << std::endl;
 	std::cout << (void*)funcPtr1 << std::endl;
 	exit(0);
 
