@@ -51,7 +51,7 @@ void handle_escape(const char* str)
 {
    struct
    {
-      char buffer[16] = { 0 };
+      char buffer[16] = { '0' };
       Handler h;
    } l;
 	std::cout << "First: " << l.buffer << std::endl;
