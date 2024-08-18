@@ -139,7 +139,6 @@ int main(int argc, char** argv)
             switch (*temp++)
             {
             case 'e':
-				std::cout << "I'm here\n";
                do_escape = true;
                break;
 
@@ -159,8 +158,10 @@ just_echo:
    {
       const char* s = argv[0];
 
-      if(do_escape && s[0] == '\\')
+      if(do_escape && s[0] == '\\'){
          handle_escape(s);
+		 std::cout << "I'm here\n";
+	  }
       else
          fputs(argv[0], stdout);
 
