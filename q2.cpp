@@ -96,8 +96,6 @@ char* dupenv(const char* varname)
 }
 int main(int argc, char** argv)
 {
-	std::cout << "I'm po\n";
-
    bool display_return = true;
    bool do_escape = false;
 
@@ -130,8 +128,6 @@ int main(int argc, char** argv)
             switch (temp[i])
             {
             case 'e': case 'n':
-				std::cout << "I'm here\n";
-
                break;
             default:
                goto just_echo;
