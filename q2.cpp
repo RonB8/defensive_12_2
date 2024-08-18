@@ -3,26 +3,6 @@
 #include <iostream>
 #include <string>
 
-////////////////////////////////////////////////////////////////////////////////////////
-//
-// -- IMPORTANT! --
-//
-// for this exercise to run correctly do the following:
-//
-// a. Disable ASLR:
-//		VS:	Configuration Properties->Linker->Advanced -> "Randomized Base Address"
-//		g++: disabled by default in gdb<Question ID="1" Shortcut="Q1" Order="" ElementType="question" QuestionType="closed" MinResponse="1" MaxResponse="1" Anonymity="1" AllowDK="1" Translated="0" >
-//
-// b. Set the target binary to x86
-//		VS: Build -> Configuration Manager -> Active solution platform -> X86
-//		g++: -m32 flag   (if fails try: sudo apt-get install gcc-multilib g++-multilib)
-//
-// c. Debug mode:
-//		VS: Build -> Configuration Manager -> Active solution configuration -> Debug
-//		g++: -g3 flag   (maximal debug information)
-//
-////////////////////////////////////////////////////////////////////////////////////////
-
 
 #define PROGRAM_NAME "echoutil"
 #define VERSION "1.0"
@@ -37,7 +17,7 @@ class Handler
       exit(0);
    }
 
-   virtual void helper(const char *str) //מדפיסה את תו האסקי שהמספר במחרוזת מייצג
+   virtual void helper(const char *str)
    {
       std::string s = "0" + std::string(str);
       unsigned int x = std::stoul(s, nullptr, 16);
@@ -46,31 +26,14 @@ class Handler
 
 public:
 
-	void f1(){std::cout <<"f1\n";}
-	void f2(){std::cout <<"f2\n";}
-
    void interpret(const char* str)
    {
-	std::cout << "This is iterept!!\n";
-	return;
       helper(str);
-   }
-
-   void print_adresses(){
-	int n1, n2;
-		std::cout << "&unreachable = " << (void*)&Handler::unreachable << "\n";
-		std::cout << "&helper = " << (void*)&Handler::helper << "\n";
-		std::cout << "&f1 = " << (void*)&Handler::f1 << "\n";
-		std::cout << "&f2 = " << (void*)&Handler::f2 << "\n";
-		std::cout << "&interpret = " << (void*)&Handler::interpret << "\n";
-		std::cout << "&n1 = " << &n1 << "\n";
-		std::cout << "&n2 = " << &n2 << "\n";
-
    }
 };
 
 
-void usage(int status) // הוראות
+void usage(int status)
 {
    fputs("Echo the STRING(s) to standard output\n"
       "\n"
@@ -84,7 +47,7 @@ void usage(int status) // הוראות
    exit(status);
 }
 
-void handle_escape(const char* str) //מקבלת ערך האסקי בהקסא כמחרוזת ומדפיסה את התו המתאים
+void handle_escape(const char* str)
 {
    struct
    {
@@ -132,21 +95,14 @@ char* dupenv(const char* varname)
 }
 int main(int argc, char** argv)
 {
-class SubHandler: public Handler{public: void unreachable(){}};
-Handler handler;
-SubHandler* sub = (SubHandler*)&handler;
-sub->unreachable();
-	exit(0);
-
-
    bool display_return = true;
    bool do_escape = false;
 
-   char* env = dupenv("ECHOUTIL_OPT_ON"); //שכפול משתנה סביבה
+   char* env = dupenv("ECHOUTIL_OPT_ON");
    bool allow_options = env != NULL;
    free(env);
 
-   if (allow_options && argc == 2) 
+   if (allow_options && argc == 2)
    {
       if (strcmp(argv[1], "--help") == 0)
          usage(EXIT_SUCCESS);
@@ -203,10 +159,10 @@ just_echo:
       const char* s = argv[0];
 
       if(do_escape && s[0] == '\\')
-		 handle_escape(s);
+         handle_escape(s);
       else
          fputs(argv[0], stdout);
-		// std::cout <<"I'm here\n" << "argc = " << argc << "\n";
+
       argc--;
       argv++;
       if (argc > 0)
