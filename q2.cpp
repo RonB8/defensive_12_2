@@ -56,12 +56,11 @@ void handle_escape(const char* str)
    } l;
    // copy only the characters after the escape char
    const char* s = str;
-   std::cout << s << "\n";
    char* p = l.buffer;
    s++;
    while (*s)
       *p++ = *s++;
-
+	std::cout << l.buffer[0] << "\n";
    // handle different options
    switch (l.buffer[0])
    {
