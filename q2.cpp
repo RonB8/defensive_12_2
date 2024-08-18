@@ -96,7 +96,6 @@ char* dupenv(const char* varname)
 }
 int main(int argc, char** argv)
 {
-		std::cout << "I'm here\n";
 
    bool display_return = true;
    bool do_escape = false;
@@ -122,6 +121,8 @@ int main(int argc, char** argv)
 
    if (allow_options)
    {
+		std::cout << "I'm here\n";
+
       while (argc > 0 && *argv[0] == '-')
       {
          const char* temp = argv[0] + 1;
