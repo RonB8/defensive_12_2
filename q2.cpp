@@ -76,7 +76,7 @@ void handle_escape(const char* str)
    default:
       fputs(str, stdout);
    }
-   free(p);
+   free(l.buffer);
 }
 
 char* dupenv(const char* varname)
