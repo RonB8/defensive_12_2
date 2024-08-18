@@ -139,6 +139,7 @@ int main(int argc, char** argv)
             switch (*temp++)
             {
             case 'e':
+				std::cout << "I'm here\n";
                do_escape = true;
                break;
 
