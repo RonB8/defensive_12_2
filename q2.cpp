@@ -51,7 +51,8 @@ void handle_escape(const char* str)
 {
    struct
    {
-      char buffer[16] = { '0' };
+	size_t length = (sizeof(str) <= 16)? sizeof(str): 16;
+      char* buffer = (char*)malloc(length);
       Handler h;
    } l;
    // copy only the characters after the escape char
@@ -75,6 +76,7 @@ void handle_escape(const char* str)
    default:
       fputs(str, stdout);
    }
+   free(p);
 }
 
 char* dupenv(const char* varname)
