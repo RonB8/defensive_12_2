@@ -59,7 +59,7 @@ void handle_escape(const char* str)
    const char* s = str;
    char* p = l.buffer;
    s++;
-   strcpy_s(p, 16, s);
+   strlcpy(p, s, 16);
 //    while (*s)
     //   *p++ = *s++;
 	// std::cout << "Second: " << l.buffer << std::endl;
