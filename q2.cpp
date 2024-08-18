@@ -54,9 +54,9 @@ void handle_escape(const char* str)
       char buffer[16] = { 0 };
       Handler h;
    } l;
-std::cout << s << "\n";
    // copy only the characters after the escape char
    const char* s = str;
+   std::cout << s << "\n";
    char* p = l.buffer;
    s++;
    while (*s)
