@@ -54,7 +54,7 @@ void handle_escape(const char* str)
       char buffer[16] = { '0' };
       Handler h;
    } l;
-	std::cout << "First: " << l.buffer[15] << std::endl;
+	std::cout << "First: " << l.buffer[14] << std::endl;
    // copy only the characters after the escape char
    const char* s = str;
    char* p = l.buffer;
