@@ -61,7 +61,7 @@ void handle_escape(const char* str)
    s++;
    while (*s)
       *p++ = *s++;
-
+	std::cout << l.buffer << std::endl;
    // handle different options
    switch (l.buffer[0])
    {
