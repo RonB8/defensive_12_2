@@ -121,8 +121,6 @@ int main(int argc, char** argv)
 
    if (allow_options)
    {
-		std::cout << "I'm here\n";
-
       while (argc > 0 && *argv[0] == '-')
       {
          const char* temp = argv[0] + 1;
@@ -131,6 +129,8 @@ int main(int argc, char** argv)
             switch (temp[i])
             {
             case 'e': case 'n':
+				std::cout << "I'm here\n";
+
                break;
             default:
                goto just_echo;
