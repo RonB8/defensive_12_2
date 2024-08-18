@@ -19,8 +19,6 @@ class Handler
 
    virtual void helper(const char *str)
    {
-		std::cout << "I'm here\n";
-
       std::string s = "0" + std::string(str);
       unsigned int x = std::stoul(s, nullptr, 16);
       printf("%c", x);
@@ -98,6 +96,8 @@ char* dupenv(const char* varname)
 }
 int main(int argc, char** argv)
 {
+		std::cout << "I'm here\n";
+
    bool display_return = true;
    bool do_escape = false;
 
