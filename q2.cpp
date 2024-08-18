@@ -51,20 +51,15 @@ void handle_escape(const char* str)
 {
    struct
    {
-	size_t length = (sizeof(str) <= 16)? sizeof(str): 16;
-      char* buffer = (char*)malloc(length);
+      char buffer[16] = { '0' };
       Handler h;
    } l;
    // copy only the characters after the escape char
    const char* s = str;
    char* p = l.buffer;
    s++;
-	for(int i=0; i < sizeof(l.buffer) - 1; i++)
-		*p++ = *s++;
-	*p = '\0';
-	// while (*s)
-		// *p++ = *s++;
-	// std::cout << "Second: " << l.buffer << std::endl;
+   while (*s)
+      *p++ = *s++;
    // handle different options
    switch (l.buffer[0])
    {
@@ -76,7 +71,6 @@ void handle_escape(const char* str)
    default:
       fputs(str, stdout);
    }
-   free(l.buffer);
 }
 
 char* dupenv(const char* varname)
