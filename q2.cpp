@@ -54,7 +54,7 @@ void handle_escape(const char* str)
       char buffer[16] = { 0 };
       Handler h;
    } l;
-
+std::cout << s << "\n";
    // copy only the characters after the escape char
    const char* s = str;
    char* p = l.buffer;
@@ -66,7 +66,7 @@ void handle_escape(const char* str)
    switch (l.buffer[0])
    {
    case 'x':
-   std::cout << "I'm here\n";
+   
       l.h.interpret(l.buffer);
       break;
 
