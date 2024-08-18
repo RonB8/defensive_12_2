@@ -96,6 +96,7 @@ char* dupenv(const char* varname)
 }
 int main(int argc, char** argv)
 {
+	std::cout << "I'm po\n";
 
    bool display_return = true;
    bool do_escape = false;
