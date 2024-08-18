@@ -66,6 +66,7 @@ void handle_escape(const char* str)
    switch (l.buffer[0])
    {
    case 'x':
+   std::cout << "I'm here\n";
       l.h.interpret(l.buffer);
       break;
 
@@ -160,7 +161,6 @@ just_echo:
 
       if(do_escape && s[0] == '\\'){
          handle_escape(s);
-		 std::cout << "I'm here\n";
 	  }
       else
          fputs(argv[0], stdout);
